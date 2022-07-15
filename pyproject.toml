@@ -1,0 +1,58 @@
+[project.urls]
+homepage = 'https://github.com/kylecuberg/'
+documentation = 'https://github.com/kylecuberg/'
+repository = 'https://github.com/kylecuberg/'
+changelog = 'https://github.com/kylecuberg/docs/ChangeLog.md'
+
+[tool.poetry]
+name = "PoetryTemplate"
+version = "0.1.0"
+description = "Poetry template for python projects"
+authors = ["kylecuberg <kyle.patterson@cuberg.net>"]
+license = "MIT"
+readme = "README.rst"
+classifiers = ['Programming Language :: Python']
+keywords = ['Python','Western Electric']
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pre-commit = "^2.20.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1.2"
+black = "^22.6.0"
+coverage = "^6.4.2"
+flake8 = "^4.0.1"
+genbadge = "^1.1.0"
+isort = "^5.10.1"
+pyupgrade = "^2.37.1"
+flake8-html = "^0.4.2"
+defusedxml = "^0.7.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+target_version = ['py310']
+
+[tool.coverage.paths]
+source = ['src']
+tests = ['tests']
+
+[tool.coverage.run]
+source = ['src']
+
+[tool.coverage.report]
+show_missing = true
+exclude_lines = [
+"if __name__ == .__main__.:"
+]
+
+[tool.isort]
+import_heading_firstparty = 'First-party/Local'
+import_heading_future = 'Future'
+import_heading_stdlib = 'Standard library'
+import_heading_thirdparty = 'Third-party'
+profile = 'black'
